@@ -33,6 +33,12 @@ const itemSchema = new mongoose.Schema(
       default: "",
       trim: true,
     },
+    discountPercentage: {
+      type: Number,
+      default: 0,
+      min: [0, "Discount cannot be negative"],
+      max: [100, "Discount cannot exceed 100"],
+    },
   },
   { timestamps: true }
 );
